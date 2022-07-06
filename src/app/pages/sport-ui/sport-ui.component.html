@@ -1,0 +1,32 @@
+<p>sport-ui works!</p>
+
+<h2 *ngIf="loading">Loading...</h2>
+
+<table *ngIf="sportRecords.length > 0">
+ <thead>
+    <tr>
+     <th>S/N</th>
+     <th>Country</th>
+     <th>Region</th>
+     <th>Stadium</th>
+     <th>Start</th>
+     <th>Tournament</th>
+     <th>Action</th>
+    </tr>
+ </thead>
+ <tbody>
+  <tr *ngFor="let record of sportRecords; let i = index">
+   <td>{{ i + 1 }}</td>
+   <td>{{ record?.country }}</td>
+   <td>{{ record?.region }}</td>
+   <td>{{ record?.stadium}}</td>
+   <td>{{ record?.start }}</td>
+   <td>{{ record?.tournament }}</td>
+   <td>
+    <button>Edit</button>
+    <button>Delete</button>
+   </td>
+  </tr>
+ </tbody>
+
+</table>
